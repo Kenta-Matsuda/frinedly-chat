@@ -19,7 +19,7 @@ final ThemeData kDefaultTheme = ThemeData(
   accentColor: Colors.orangeAccent[400],
 );
 
-String _name = 'Your Name';
+String _name = 'UserName';
 
 class FriendlyChatApp extends StatelessWidget {
   const FriendlyChatApp({Key? key}) : super(key: key);
@@ -89,7 +89,37 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      backgroundColor: Colors.lime,
+      drawer: ClipRRect(
+        borderRadius: BorderRadius.horizontal(right: Radius.circular(40.0)),
+        child: Drawer(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                UserAccountsDrawerHeader(
+                  accountName: Text("UserName"),
+                  accountEmail: Text(""),
+                  currentAccountPicture: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    backgroundImage: NetworkImage(
+                        "https://pbs.twimg.com/profile_images/885510796691689473/rR9aWvBQ_400x400.jpg"),
+                  ),
+                ),
+                Text(
+                  "ここにボタン",
+                  style: TextStyle(
+                  fontSize: 20.0),
+                   ),
+                Text(
+                  "押すと遷移",
+                  style: TextStyle(
+                      fontSize: 20.0),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
       appBar: AppBar(
         title: Center(
           child: const Text('いつでも進路相談'),
