@@ -8,6 +8,16 @@ class Login extends StatefulWidget {
   @override
   State<Login> createState() => _LoginState();
 }
+
+class _LoginState extends State<Login> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,8 +57,9 @@ class Login extends StatefulWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomeRoute(),
-                      ));
+                        builder: (context) => HomeRoute()
+                      ),
+                  );
                 },
               ),
             ],

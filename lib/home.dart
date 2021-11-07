@@ -3,9 +3,8 @@ import 'package:friendly_chat/main.dart';
 import 'profile.dart';
 
 class HomeRoute extends StatefulWidget {
-  const HomeRoute({Key? key, required this.title}) : super(key: key);
+  const HomeRoute({Key? key}) : super(key: key);
 
-  final String title;
 
   @override
   State<HomeRoute> createState() => _HomeRouteState();
