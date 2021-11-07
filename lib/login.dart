@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
 
+String  logemail = "メール未登録";
+String email = "";
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -10,13 +12,13 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  int _counter = 0;
 
   void _incrementCounter() {
     setState(() {
-      _counter++;
     });
   }
+
+  String email = "";
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +35,12 @@ class _LoginState extends State<Login> {
             children: <Widget>[
               Text('メールアドレス'),
               new TextField(
+                onChanged: (text){
+                  email = text;
+                },
                 enabled: true,
                 // 入力数
-                maxLength: 255,
+                maxLength: 30,
                 maxLengthEnforced: false,
                 style: TextStyle(color: Colors.red),
                 obscureText: false,
@@ -54,6 +59,7 @@ class _LoginState extends State<Login> {
               ElevatedButton(
                 child: Text('ログイン'),
                 onPressed: () {
+                  logemail = email;
                   Navigator.push(
                       context,
                       MaterialPageRoute(

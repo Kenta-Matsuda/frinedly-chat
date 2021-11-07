@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:friendly_chat/main.dart';
 import 'profile.dart';
+import 'chat.dart';
 
 class HomeRoute extends StatefulWidget {
   const HomeRoute({Key? key}) : super(key: key);
-
 
   @override
   State<HomeRoute> createState() => _HomeRouteState();
@@ -19,32 +19,47 @@ class _HomeRouteState extends State<HomeRoute> {
         title: Text('いつでも進路相談'),
         backgroundColor: Colors.green,
       ),
-      body: Column(children: [
-        ElevatedButton(
-          child: Text(
-            "プロフィール",
-            style: TextStyle(fontSize: 20.0),
+      body: Center(
+        child: Column(mainAxisSize: MainAxisSize.min, children: [
+          SizedBox(
+            width: 330,
+            height: 90,
+            child: ElevatedButton.icon(
+              label: Text(
+                "プロフィール",
+                style: TextStyle(fontSize: 20.0),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileRoute()),
+                );
+              },
+              icon: Icon(Icons.account_box),
+            ),
           ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ProfileRoute()),
-            );
-          },
-        ),
-        ElevatedButton(
-          child: Text(
-            "チャット",
-            style: TextStyle(fontSize: 20.0),
+          SizedBox(
+            height: 50.0,
           ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ChatScreen()),
-            );
-          },
-        ),
-      ]),
+          SizedBox(
+            width: 330,
+            height: 90,
+            child: ElevatedButton.icon(
+              label: Text(
+                "チャット",
+                style: TextStyle(fontSize: 20.0),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ChatScreen()),
+                );
+              },
+              icon: Icon(Icons.chat),
+            ),
+          ),
+        ]),
+      ),
     );
   }
 }
