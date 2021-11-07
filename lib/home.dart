@@ -58,6 +58,46 @@ class _HomeRouteState extends State<HomeRoute> {
               icon: Icon(Icons.chat),
             ),
           ),
+          SizedBox(
+            height: 50.0,
+          ),
+          SizedBox(
+            width: 330,
+            height: 90,
+            child: ElevatedButton.icon(
+              label: Text(
+                "スケジュール",
+                style: TextStyle(fontSize: 20.0),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileRoute()),
+                );
+              },
+              icon: Icon(Icons.calendar_today),
+            ),
+          ),
+          SizedBox(
+            height: 50.0,
+          ),
+          SizedBox(
+            width: 330,
+            height: 90,
+            child: ElevatedButton.icon(
+              label: Text(
+                "連絡帳",
+                style: TextStyle(fontSize: 20.0),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfileRoute()),
+                );
+              },
+              icon: Icon(Icons.announcement),
+            ),
+          ),
         ]),
       ),
     );

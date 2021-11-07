@@ -35,7 +35,9 @@ class ChatMessage extends StatelessWidget {
                   Text(_name, style: Theme.of(context).textTheme.headline4),
                   Container(
                     margin: const EdgeInsets.only(top: 5.0),
-                    child: Text(text),
+                    child: Text(text, style: TextStyle(
+                      fontSize: 24.0
+                    ),),
                   ),
                 ],
               ),
@@ -133,15 +135,6 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                   );
                 },
                 icon: Icon(Icons.house)
-            ),
-            IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ProfileRoute()),
-                  );
-                },
-                icon: Icon(Icons.account_circle)
             ),
             Text('安倍君'),
           ],
