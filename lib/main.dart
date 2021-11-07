@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'home.dart';
+import 'profile.dart';
 
 void main() {
   runApp(
@@ -105,15 +107,33 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
                         "https://pbs.twimg.com/profile_images/885510796691689473/rR9aWvBQ_400x400.jpg"),
                   ),
                 ),
-                Text(
-                  "ここにボタン",
-                  style: TextStyle(
-                  fontSize: 20.0),
-                   ),
-                Text(
-                  "押すと遷移",
-                  style: TextStyle(
-                      fontSize: 20.0),
+
+                ElevatedButton(
+                  child: Text(
+                    "ホーム",
+                    style: TextStyle(
+                        fontSize: 20.0),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                      MaterialPageRoute(builder: (context) => HomeRoute()),
+                    );
+                  },
+                ),
+
+                ElevatedButton(
+                  child: Text(
+                    "プロフィール",
+                    style: TextStyle(
+                        fontSize: 20.0),
+                  ),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProfileRoute()),
+                    );
+                  },
                 ),
               ],
             ),
